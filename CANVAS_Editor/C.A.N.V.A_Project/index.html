@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Mapas Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Editor de Mapas para Jogo Pygame</h1>
+            <div class="controls">
+                <input type="file" id="tileset-upload" accept="image/*" hidden>
+                <button id="upload-btn">Carregar Tileset</button>
+                <button id="export-btn">Exportar Mapa</button>
+                <button id="clear-btn">Limpar Mapa</button>
+                <label>Tamanho do Tile: <input type="number" id="tile-size" value="32" min="16" max="64"></label>
+            </div>
+        </header>
+        
+        <div class="editor-area">
+            <div class="palette-container">
+                <h3>Tileset</h3>
+                <div id="tileset-palette"></div>
+            </div>
+            
+            <div class="canvas-container">
+                <canvas id="map-canvas"></canvas>
+                <div class="canvas-controls">
+                    <button id="zoom-in">+</button>
+                    <button id="zoom-out">-</button>
+                    <span id="zoom-level">100%</span>
+                </div>
+            </div>
+            
+            <div class="properties-panel">
+                <h3>Propriedades</h3>
+                <div id="tile-properties">
+                    <label>Tile Selecionado: <span id="selected-tile">Nenhum</span></label>
+                    <label><input type="checkbox" id="tile-collision"> Tile de Colisão</label>
+                    <label>Posição: <span id="tile-position">-</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
